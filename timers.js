@@ -1,5 +1,6 @@
 window.onload = function(){
 
+  /**Variables**/
   let timeElapsed = 1;
   let startButton = document.getElementById('start');
   let resetButton = document.getElementById('reset');
@@ -7,7 +8,7 @@ window.onload = function(){
   let timerText = document.getElementById('timer');
   let isStarted = false;
 
-
+  /**Functions**/
   let startTimer = () => {
     if (!isStarted){
       isStarted = !isStarted;
@@ -19,10 +20,6 @@ window.onload = function(){
     }
   };
 
-  startButton.addEventListener('click', startTimer);
-
-
-  //When "Reset" is clicked, the text should return to "Stop Watch"
   let resetTimer = () => {
     isStarted = !isStarted;
     window.clearInterval(intervalID);
@@ -31,25 +28,16 @@ window.onload = function(){
     console.log(timeElapsed);
   };
 
-  resetButton.addEventListener('click', resetTimer);
-    //grab the reset button and set to variable
-    // set text from "time elapsed" to "stop Watch"
-    //clear interval
 
-
-  //When "Pause" is clicked, the text should
   let pauseTimer = () => {
     isStarted = !isStarted;
     window.clearInterval(intervalID);
   };
 
+  ///**************Click Events***********///
+  startButton.addEventListener('click', startTimer);
+  resetButton.addEventListener('click', resetTimer);
   pauseButton.addEventListener('click', pauseTimer);
-  //say "Time elapsed: 1", but stop incrementing.
-    //clear interval
-
-
-
-
-
+  ///*************************************///
 
 };
